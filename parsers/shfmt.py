@@ -15,7 +15,7 @@ class ShfmtParser(LinterParser):
             output_splited = re.split(r"(@@.*?@@\n)", output_str, flags=re.DOTALL)[1:]
             chunks = []
             for index in range(0, len(output_splited), 2):
-                lines_diff, suggestion = output_splited[index: index + 2]
+                lines_diff, suggestion = output_splited[index : index + 2]
                 start = int(
                     re.search(r"@@.*-(?P<start>\d+),\d+", lines_diff).groupdict()[
                         "start"
